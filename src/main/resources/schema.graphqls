@@ -1,0 +1,51 @@
+type Agent {
+    agentId: ID!
+	area: String
+	language: String
+	firstName: String
+	lastName: String
+}
+
+type Dependent {
+	firstName: String
+	lastName: String
+}
+
+type Customer {
+	customerId: ID!
+	firstName: String
+	lastName: String
+	age: Int
+	area: String
+	agentId: Int
+	agentRating: Int
+	primaryLanguage: String
+	dependents: [Dependent]
+	homePolicy: Boolean
+	autoPolicy: Boolean
+	rentersPolicy: Boolean
+	totalMonthlyPremium: String
+	yearsOfService: Int
+	vehiclesInsured: Int
+}
+
+type Claim {
+	claimId: ID!
+	customer: Customer
+	closed: Boolean
+	monthsOpen: Int
+}
+
+type Vendor {
+	vendorId: ID!
+	area: String
+	vendorRating: Int
+	inScope: Boolean
+}
+
+type Query {
+	agents: [Agent]
+	claims: [Claim]
+	customers: [Customer]
+	vendors: [Vendor]
+}

@@ -24,6 +24,7 @@ public class Customer {
 		if(s.length < 15)
 			return;
 
+		//First set of values
 		customerId = Integer.parseInt(s[0]);
 		firstName = s[1];
 		lastName = s[2];
@@ -33,6 +34,7 @@ public class Customer {
 		agentRating = Short.parseShort(s[6]);
 		primaryLanguage = s[7];
 
+		//Variable number of dependents
 		int i = 0;
 		dependents = new ArrayList<>();
 		if(s[8].length() > 0) {
@@ -43,6 +45,7 @@ public class Customer {
 			i--;
 		}
 
+		//Other variables offset accordingly
 		homePolicy = s[9 + i].equals("true");
 		autoPolicy = s[10 + i].equals("true");
 		rentersPolicy = s[11 + i].equals("true");

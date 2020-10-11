@@ -10,6 +10,7 @@ public class Vendor {
 		if(s.length != 4)
 			return;
 
+		//Set values
 		vendorId = Integer.parseInt(s[0]);
 		area = s[1];
 		vendorRating = Integer.parseInt(s[2]);

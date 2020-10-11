@@ -10,6 +10,7 @@ public class Claim {
 		if(s.length != 4)
 			return;
 
+		//Set values
 		claimId = Integer.parseInt(s[0]);
 		customerId = Integer.parseInt(s[1]);
 		closed = s[2].equals("true");
